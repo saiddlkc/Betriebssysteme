@@ -1,8 +1,8 @@
 #!/bin/sh
 # Shellskript, das eine Frage stellt und auf Ja-/Nein-Antwort reagiert
 
-frage="$1"     # 1. Parameter: die Frage
-jaAntwort="$2" # 2. Parameter: gültige Ja-Antwort
+frage="$1"       # 1. Parameter: die Frage
+jaAntwort="$2"   # 2. Parameter: gültige Ja-Antwort
 neinAntwort="$3" # 3. Parameter: gültige Nein-Antwort
 
 antwort=""
@@ -14,11 +14,13 @@ do
   read antwort
 done
 
-# Wenn die Antwort der Ja-Antwort entspricht, Skript mit Exit-Code 0 beenden
+# Wenn Ja → exit 0
 if [ "$antwort" = "$jaAntwort" ]
 then
+  echo $?
   exit 0
 else
-  # Ansonsten (muss dann Nein sein) mit Exit-Code 1 beenden
+  # Wenn Nein → exit 1
+  echo $?
   exit 1
 fi
