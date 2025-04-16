@@ -1,1 +1,3 @@
-# shell-uebungen
+# Einführung shell-uebungen 
+Python
+#
